@@ -6,7 +6,5 @@ using UnityEngine;
 public class ObstacleData_Object : ScriptableObject
 {
     public float speed;
- 
-
-
+    
 }

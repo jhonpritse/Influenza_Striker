@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Button_Manager : MonoBehaviour
 {
-
+//TODO set up proper name level name
     #region Constant
 //Constant Value for level name
 //Call Variable and not manually
@@ -26,31 +26,17 @@ public class Button_Manager : MonoBehaviour
     public GameObject controlButtons;
     public GameObject exitConfirmPanel;
     public GameObject levelSelectionPanel;
-    public GameObject cardsPanel;
+    public GameObject almanacPanel;
     public GameObject mainMenuPanel;  
     public GameObject settingsPanel;
+    public GameObject creditsPanel;
     public GameObject pausePanel;
     public GameObject pauseButton;
     public GameObject inGameUI;
 
-    // private bool _isInGame;
-    
-
-    private void Update()
+    private void OnEnable()
     {
-        // if (_isInGame)
-        // {
-        //     mainMenuPanel.SetActive(false);
-        //     controlButtons.SetActive(true);
-        //     inGameUI.SetActive(true);
-        //     
-        // }
-        // else
-        // {
-        //     mainMenuPanel.SetActive(true);
-        //     controlButtons.SetActive(false);
-        //     inGameUI.SetActive(false);
-        // }
+        
     }
 
     public void StartGameButton()
@@ -69,11 +55,11 @@ public class Button_Manager : MonoBehaviour
     public void LourButton()
     {
         mainMenuPanel.SetActive(false);
-        cardsPanel.SetActive(true);
+        almanacPanel.SetActive(true);
     }
     public void CardClose()
     {
-        cardsPanel.SetActive(false);
+        almanacPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
     }
     
@@ -108,57 +94,54 @@ public class Button_Manager : MonoBehaviour
     {
         Application.Quit();
     }
-    
-    
+
+    public void CreditsButton()
+    {
+        creditsPanel.SetActive(true);
+    }
+    public void CreditsCloseButton()
+    {
+        creditsPanel.SetActive(false);
+    }
     
     //level Selection 
     public void Level1()
     {
-     //   _isInGame = true;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(Level1Name);
     }
     public void Level2()
     {
-     //   _isInGame = true;
         SceneManager.LoadScene(Level2Name);
     }
     public void Level3()
     {
-     //   _isInGame = true;
         SceneManager.LoadScene(Level3Name);
     }
     public void Level4()
     {
-     //   _isInGame = true;
         SceneManager.LoadScene(Level4Name);
     }
     public void Level5()
     {
-     //   _isInGame = true;
         SceneManager.LoadScene(Level5Name);
     }
     public void Level6()
     {
-     //   _isInGame = true;
         SceneManager.LoadScene(Level6Name);
     }
     public void Level7()
     {
-     //   _isInGame = true;
         SceneManager.LoadScene(Level7Name);
     }
     public void Level8()
     {
-     //   _isInGame = true;
         SceneManager.LoadScene(Level8Name);
     }
     public void Level9()
     {
-     //   _isInGame = true;
         SceneManager.LoadScene(Level9Name);
     }  public void Level10()
     {
-     //   _isInGame = true;
         SceneManager.LoadScene(Level10Name);
     }
 
@@ -166,17 +149,15 @@ public class Button_Manager : MonoBehaviour
 
     public void PauseGameButton()
     {
-      //     _isInGame = false;
         Time.timeScale = 0;
         controlButtons.SetActive(false);
         pauseButton.SetActive(false);
         pausePanel.SetActive(true);
-        
     }
     
     public void ResumeGameButton()
     {
-     //   _isInGame = true;
+
         Time.timeScale = 1;
         controlButtons.SetActive(true);
         pauseButton.SetActive(true);
@@ -185,13 +166,11 @@ public class Button_Manager : MonoBehaviour
 
     public void MainMenuButton()
     {
-      //     _isInGame = false;
         SceneManager.LoadScene(0);
     }
 
     public void RestartSceneButton()
     {
-     //   _isInGame = true;
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

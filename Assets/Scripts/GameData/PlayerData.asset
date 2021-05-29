@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bdee64400c0c6a4bbab59fa4574c0f3, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  health: 4
+  health: 10
   moveSpeed: 350
   jumpSpeed: 750
-  slideTime: 1.35
-  groundCheckFeetRadius: 0.4
-  attackSpeed: 500
-  attackPrefab: {fileID: 8283440788924964806, guid: 3a7601f38efe1f140b8ba4627c7e4654,
+  attackSpeed: 75
+  attackPrefab: {fileID: 507085700081008904, guid: 3a7601f38efe1f140b8ba4627c7e4654,
     type: 3}
-  attackShootParticle: {fileID: 4686786632028090701, guid: 215c95e17c69f9e408ac6d99890ed7fc,
+  attackShootParticle: {fileID: 4610986209994293600, guid: 215c95e17c69f9e408ac6d99890ed7fc,
     type: 3}
   healthUI: {fileID: 893970543319847790, guid: 55ed6904eeddf6243ac4538fa909019a, type: 3}
+  groundCheckFeetRadius: 0.4

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e59f29a6b2ef3f4d877f7f8a406b2ed, type: 3}
+  m_Name: VirusData_04_Hanta
+  m_EditorClassIdentifier: 
+  virusName: 'Hanta '
+  cardIndexKey: 3
+  scoreLimit: 30
+  health: 30
+  playerDamage: 1
+  plusScoreWhenHit: 8
+  virusAttack: {fileID: 7633757479819766166, guid: 63106d8a52286ae47b802ed94b05b265,
+    type: 3}
+  virusShootParticle: {fileID: 4768333194506474171, guid: 953d2991fbfb386448ba9edabb8b4802,
+    type: 3}
+  attackRate: 2.5
+  attackSpeed: 27
+  floatingHeightY: 0.01751
+  floatingFreqY: 0.93
+  floatingHeightX: 0.113
+  floatingFreqX: 1.32
+  movementSpeed: 20
+  description1: 
+  description2: 
+  description3: 

@@ -6,7 +6,12 @@ TagManager:
   tags:
   - Ground
   - Obstacle
-  - EnemyBoss
+  - Virus/Attack
+  - Virus/Body
+  - Player/Attack
+  - Player/Body
+  - PlayerAttack
+  - Spawn-able/Spawner
   layers:
   - Default
   - TransparentFX

@@ -21,12 +21,7 @@ public class Spawner_Manager : MonoBehaviour
     [SerializeField] private GameObject[] flyingObstacle;
     [Space]
     
-    
-    
     private Transform _spawnerPos;
-    
-    
-    
     [Range(1, 5)]
     [SerializeField]  private float spawnRate;
     [Range(.25f, 3)]
@@ -37,10 +32,19 @@ public class Spawner_Manager : MonoBehaviour
     [SerializeField] private float decrementSpawnRate;
 
     private bool _canSpawn;
-    void Start()
+    private int _maxChanceValue;
+    private int _maxOfLowObj;
+    private int _maxOfHighObj;
+    
+    private void Start()
     {
         _canSpawn = true;
         _spawnerPos = transform.Find("Spawner").transform;
+        
+        _maxChanceValue = chanceToSpawnFlyingObjInPercentage + chanceToSpawnHighObjInPercentage + chanceToSpawnLowObjInPercentage;
+         _maxOfLowObj = chanceToSpawnLowObjInPercentage;
+         _maxOfHighObj = chanceToSpawnLowObjInPercentage + chanceToSpawnHighObjInPercentage;
+         
         StartCoroutine(SpawnTimer(0));
     }
 
@@ -48,73 +52,62 @@ public class Spawner_Manager : MonoBehaviour
     {
         _canSpawn = false;
     }
+    
     private void SpawnObstacle()
     {
-        int maxChanceValue = chanceToSpawnFlyingObjInPercentage + chanceToSpawnHighObjInPercentage + chanceToSpawnLowObjInPercentage;
-        int maxOfLowObj = chanceToSpawnLowObjInPercentage;
-        int maxOfHighObj = chanceToSpawnLowObjInPercentage + chanceToSpawnHighObjInPercentage;
+
+        //set chance of per object type to be spawned
+        //inside per object type, set random chance to spawn object in array
+        var randValue = Random.Range(1, _maxChanceValue);
         
-        int randValue = Random.Range(1, maxChanceValue);
-        
-        if (randValue < maxOfLowObj)
+        if (randValue < _maxOfLowObj)
         {
             // print("Spawned Low");
-            int randArrayIndex = Random.Range(0, lowObstacle.Length);
+            var randArrayIndex = Random.Range(0, lowObstacle.Length);
             Instantiate(lowObstacle[randArrayIndex], _spawnerPos.position, Quaternion.identity);
         }
-        else if(randValue > maxOfLowObj && randValue < maxOfHighObj)
+        else if(randValue > _maxOfLowObj && randValue < _maxOfHighObj)
         {
             // print("Spawned High");
-            int randArrayIndex = Random.Range(0, highObstacle.Length);
+            var randArrayIndex = Random.Range(0, highObstacle.Length);
             Instantiate(highObstacle[randArrayIndex], _spawnerPos.position, Quaternion.identity);
         }
-        else if (randValue > maxOfHighObj && randValue < maxChanceValue)
+        else if (randValue > _maxOfHighObj && randValue < _maxChanceValue)
         {
             // print("Spawned Flying Object");
-            int randArrayIndex = Random.Range(0, flyingObstacle.Length);
+            var randArrayIndex = Random.Range(0, flyingObstacle.Length);
             Instantiate(flyingObstacle[randArrayIndex], _spawnerPos.position, Quaternion.identity);
         }
-
     }
     
-    // public AnimationCurve plot = new AnimationCurve();
-    IEnumerator SpawnTimer( float firstDelay )
+    IEnumerator SpawnTimer(float firstDelay)
     {
-        float spawnRateCountdown = timeUntilSpawnRateIncrease ;
-        float spawnCountdown = firstDelay ;
-        
+        var spawnRateCountdown = timeUntilSpawnRateIncrease;
+        var spawnCountdown = firstDelay;
+
         while (true)
         {
-            yield return null ;
+            yield return null;
             spawnRateCountdown -= Time.deltaTime;
-            spawnCountdown     -= Time.deltaTime;
-           
-         
+            spawnCountdown -= Time.deltaTime;
+
             //Spawning Object
-            if( spawnCountdown < 0 )
+            if (spawnCountdown < 0)
             {
                 spawnCountdown += spawnRate;
-                // plot.AddKey(Time.realtimeSinceStartup, spawnCountdown);
                 if (_canSpawn) SpawnObstacle();
             }
-            
+
             // decrease SpawnRate 
-            if( spawnRateCountdown <= 0 && spawnRate > maxSpawnRate )
+            if (spawnRateCountdown <= 0 && spawnRate >= maxSpawnRate)
             {
                 spawnRateCountdown += timeUntilSpawnRateIncrease;
                 spawnRate -= decrementSpawnRate;
             }
-            
-            
-            
         }
         
-      
+        // ReSharper disable once IteratorNeverReturns
     }
-
-
-    void Update()
-    {
-        
-    }
+    
 }
+

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 372ff35dcf7ac0b46bfe0ab066a0bffd, type: 3}
   m_Name: ObstacleData
   m_EditorClassIdentifier: 
-  speed: 25
+  speed: 18
