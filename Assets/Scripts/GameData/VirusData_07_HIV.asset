@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   virusName: HIV
   cardIndexKey: 6
-  scoreLimit: 30
+  scoreLimit: 90
   health: 37
   playerDamage: 1
   plusScoreWhenHit: 10

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   virusName: 'Hanta '
   cardIndexKey: 3
-  scoreLimit: 30
+  scoreLimit: 60
   health: 30
   playerDamage: 1
   plusScoreWhenHit: 8

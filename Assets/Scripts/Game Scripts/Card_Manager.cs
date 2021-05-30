@@ -78,18 +78,18 @@ public class Card_Manager : MonoBehaviour
 
     public void WinLevel_Retry()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void WinLevel_MainMenu()
     {
-        SceneManager.LoadScene(0);
         Time.timeScale = 1;
+        SceneManager.LoadScene(0);
     }
 
     public void WinLevel_NextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 }

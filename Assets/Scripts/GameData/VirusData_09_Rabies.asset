@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   virusName: Rabies
   cardIndexKey: 8
-  scoreLimit: 30
+  scoreLimit: 100
   health: 45
   playerDamage: 1
   plusScoreWhenHit: 13

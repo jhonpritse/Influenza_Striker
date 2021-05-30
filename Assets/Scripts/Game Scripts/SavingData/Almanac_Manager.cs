@@ -26,7 +26,8 @@ public class Almanac_Manager : MonoBehaviour
 
     private void OnEnable()
     {
-     
+
+        Time.timeScale = 1;
         if (SavingSystem.CreatePathIfNull())
         {
             SaveAlmanac();

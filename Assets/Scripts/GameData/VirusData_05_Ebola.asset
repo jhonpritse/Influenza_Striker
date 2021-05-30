@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   virusName: Ebola
   cardIndexKey: 4
-  scoreLimit: 30
+  scoreLimit: 70
   health: 30
   playerDamage: 1
   plusScoreWhenHit: 8

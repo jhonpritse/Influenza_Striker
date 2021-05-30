@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   virusName: Smallpox
   cardIndexKey: 7
-  scoreLimit: 30
+  scoreLimit: 95
   health: 40
   playerDamage: 1
   plusScoreWhenHit: 11

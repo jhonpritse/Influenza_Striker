@@ -91,9 +91,9 @@ using UnityEngine;
          {
              if (File.Exists(LevelDataPath))
              {
-                 Debug.Log("file exits");
+             
                  BinaryFormatter formatter1 = new BinaryFormatter();
-                 Debug.Log("file exits2");
+             
                  FileStream stream = new FileStream(LevelDataPath, FileMode.Open);
                  LevelData data = formatter1.Deserialize(stream) as LevelData;
                  stream.Close();

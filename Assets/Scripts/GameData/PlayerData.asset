@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bdee64400c0c6a4bbab59fa4574c0f3, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  health: 10
-  moveSpeed: 350
+  health: 5
+  moveSpeed: 375
   jumpSpeed: 750
   attackSpeed: 75
   attackPrefab: {fileID: 507085700081008904, guid: 3a7601f38efe1f140b8ba4627c7e4654,

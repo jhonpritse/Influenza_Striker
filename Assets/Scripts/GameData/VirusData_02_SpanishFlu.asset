@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e59f29a6b2ef3f4d877f7f8a406b2ed, type: 3}
   m_Name: VirusData_02_SpanishFlu
   m_EditorClassIdentifier: 
-  virusName: Spanish FLu
+  virusName: Spanish Flu
   cardIndexKey: 1
-  scoreLimit: 30
+  scoreLimit: 40
   health: 25
   playerDamage: 1
   plusScoreWhenHit: 5

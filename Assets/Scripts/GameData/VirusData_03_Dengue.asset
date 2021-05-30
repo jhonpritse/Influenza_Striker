@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   virusName: Dengue
   cardIndexKey: 2
-  scoreLimit: 30
+  scoreLimit: 50
   health: 25
   playerDamage: 1
   plusScoreWhenHit: 7
